@@ -16,6 +16,8 @@ pattern=$(cat <<-END
 
 END
 )
+info="This app aims to scan your private network. The commands are listed below "
+version="                v1.0"
 
 function START_SCRIPT(){
 
@@ -26,16 +28,35 @@ function START_SCRIPT(){
 
 
 echo "${red_color}${pattern}"
+echo "${reset_color}${version}"
+echo "${info}"
 echo ""
-echo "${violet}>> --scan = scans for online hosts on your network.${reset_color}"
-
+echo "${violet}>> --scan = online hosts on your network."
+echo ">> --exit = exit app. ${reset_color}"
+printf "Enter the command ==> "
 read answer
 
+while [ answer != "--exit" ]; do
 
-if [ $answer == "--scan" ] ; then
+    if [ $answer == "--scan" ] ; then
   echo ""
-	echo ""
 	sleep 2
 START_SCRIPT
+  echo ""
+ printf "${reset_color}Enter the command ==> "
+  read answer
+
+  elif [ $answer == "--exit"  ]; then
+  exit
+
+
+
+
+   else
+    echo "unknown command"
+    printf "Enter the command =>> ${reset_color}"
+    read answer
 fi
- exit
+done
+
+

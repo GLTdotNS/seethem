@@ -14,11 +14,11 @@ def get_my_ip():
 def map_network(pool_size=255):
     ip_list = list()
 
-    # get my IP and compose a base like 192.168.1.xxx
+
     ip_parts = get_my_ip().split('.')
     base_ip = ip_parts[0] + '.' + ip_parts[1] + '.' + ip_parts[2] + '.'
 
-    # prepare the jobs queue
+
     jobs = multiprocessing.Queue()
     results = multiprocessing.Queue()
 
@@ -27,7 +27,7 @@ def map_network(pool_size=255):
     for p in pool:
         p.start()
 
-    # cue hte ping processes
+
     for i in range(1, 255):
         jobs.put(base_ip + '{0}'.format(i))
 

@@ -38,7 +38,6 @@ def map_network(pool_size=255):
     for p in pool:
         p.join()
 
-    # collect he results
 
     while not results.empty():
 

@@ -22,7 +22,7 @@ version="                v1.0"
 function START_SCRIPT(){
 
 
-(cd /home/$(whoami)/Downloads/seethem/&& python3 main.py)
+(cd /home/$(whoami)/Downloads/seethem-main/&& python3 main.py)
 
 }
 

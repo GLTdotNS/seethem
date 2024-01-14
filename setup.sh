@@ -25,6 +25,12 @@ function START_SCRIPT(){
 (cd /home/$(whoami)/Downloads/seethem-main/&& python3 main.py)
 
 }
+function Kicker(){
+(cd /home/$(whoami)/PycharmProjects/seethem/Kicker/ && sudo python3 Kicker.py)
+
+
+
+}
 
 
 echo "${red_color}${pattern}"
@@ -49,7 +55,11 @@ START_SCRIPT
   elif [ $answer == "--exit"  ]; then
   exit
 
+  elif [ $answer == "--kick"  ]; then
 
+    START_SCRIPT
+    Kicker
+  exit
 
 
    else

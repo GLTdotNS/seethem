@@ -22,7 +22,7 @@ version="                v1.0"
 function START_SCRIPT(){
 
 
-(cd /home/$(whoami)/Downloads/seethem-main/&& python3 main.py)
+(cd /home/$(whoami)/PycharmProjects/seethem/&& python3 main.py)
 
 }
 function Kicker(){
@@ -57,7 +57,7 @@ START_SCRIPT
 
   elif [ $answer == "--kick"  ]; then
 
-    START_SCRIPT
+
     Kicker
   exit
 

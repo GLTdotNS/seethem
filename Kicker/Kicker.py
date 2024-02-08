@@ -53,7 +53,7 @@ if my_ip:
     print("My IP:", my_ip)
 
 
-i
+
 
 def kick_client(target_ip, router_ip):
     try:
@@ -73,7 +73,7 @@ def kick_client(target_ip, router_ip):
         print(f"Exception: {e}")
 
 
-target_ip = "192.168.178.57"
+target_ip = "192.168.178.62"
 router_ip = "192.168.178.1"
 
 kick_client(target_ip, router_ip)
